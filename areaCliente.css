@@ -1,0 +1,586 @@
+@charset "UTF-8";
+
+/* Importação de Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Reset e Variáveis */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    /* Cores */
+    --cor0: #FFFFFF;
+    --cor1: #2121FF;
+    --cor2: #0170e1;
+    --cor3: #55ed0d;
+
+    /* Fonte Padrão */
+    --fonte-padrao: 'Roboto', sans-serif;
+}
+
+/* Estilos Globais */
+body {
+    font-family: var(--fonte-padrao);
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.icon {
+    position: fixed;
+    bottom: 60px;
+    right: 30px;
+    font-size: 30px;
+    background-color: #01e675;
+    color: #FFFFFF;
+    border-radius: 50%;
+    padding: 3px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    z-index: 100;
+    box-shadow: 2px 2px 2px #c0bdbd;
+}
+
+.icon .fab {
+    padding-top: 9px;
+}
+
+.icon:hover {
+    background-color: #FFFFFF;
+    color: #029e3b;
+    font-weight: 900;
+    box-shadow: 2px 2px 2px #5fe690;
+}
+
+/* Header */
+header {
+    background-color: var(--cor0);
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+header>h4 {
+    margin-bottom: 0;
+}
+
+.links-ancoras{
+    text-decoration: none;
+    color: var(--cor0);
+}
+
+/* Navegação */
+nav {
+    background-color: var(--cor1);
+    color: var(--cor0);
+    height: 60px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+/* Layout Esquerda */
+.esquerda {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 80px;
+    margin-left: 30px;
+    padding-right: 20px;
+    cursor: pointer;
+    flex-wrap: nowrap;
+}
+
+.esquerda h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    margin-right: 40px;
+    white-space: nowrap;
+}
+
+.esquerda h4 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+
+}
+.bob-fibra{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 80px;
+    margin-left: 30px;
+    padding-right: 20px;
+    cursor: pointer;
+    flex-wrap: nowrap;
+}
+.bob-fibra h2{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    margin-right: 40px;
+    white-space: nowrap;
+}
+
+/* Layout Direita */
+.direita {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 87px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.direita h4 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+}
+
+/* Botões */
+.botoes {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.botoes button {
+    background-color: var(--cor1);
+    color: var(--cor0);
+    font-family: var(--fonte-padrao);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.botoes button:hover {
+    background-color: var(--cor2);
+}
+main h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: left;
+    margin-bottom: 30px;
+    padding: 50px 70px 0px 90px;
+}
+.col-1 {
+    min-height: 600px;
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 60px;
+    flex-direction: row;
+   background-color: var(--cor1);
+    justify-content: space-evenly;
+    
+}
+.col-1 .exibir-info{
+    background-color: var(--cor3);
+    height: 300px;
+    width: 300px;
+    text-align: center;
+    color: var(--cor0);
+    border-radius: 5px 40px 5px 40px;
+    font-size: 1.2rem;
+    align-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    box-shadow: 5px 7px 20px #00000085; 
+    
+    
+    
+}
+.col-1 .exibir-info h2{
+    margin-bottom: 10px;
+}
+
+section {
+    min-height: 600px;
+    display: flex;
+    position: relative;
+    align-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 30px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.alterar-plano{
+    padding: 50px 70px 0px 90px;
+}
+
+/* Cards */
+.first-card,
+.second-card,
+.third-card,
+.fourth-card {
+    min-height: 450px;
+    width: 240px;
+    background: linear-gradient(60deg, #00ffff, #FF02FF);
+    border-radius: 20px;
+    text-align: center;
+    font-family: var(--fonte-padrao);
+    color: white;
+    padding-top: 25px;
+    line-height: 35px;
+    box-shadow: 3px 3px 10px #676666;
+}
+
+.first-card h3,
+.second-card h3,
+.third-card h3,
+.fourth-card h3 {
+    padding: 10px 0;
+}
+
+.first-card h4,
+.second-card h4,
+.third-card h4,
+.fourth-card h4 {
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 25px;
+}
+
+.first-card h5,
+.second-card h5,
+.third-card h5,
+.fourth-card h5 {
+    font-size: 0.8rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    text-align: center;
+    justify-content: center;
+    padding-top: 40px;
+    position: relative;
+}
+
+.assine {
+    width: 100%;
+    margin: auto;
+}
+
+.btn-box {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.plano-btn {
+    border: none;
+    cursor: pointer;
+    padding: 15px 30px;
+    border-radius: 10px 0px 10px 0px;
+    background-color: black;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+}
+.promocao-box{
+    min-height: 600px;
+    display: flex;
+    position: relative;
+    align-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 30px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.promocao{
+    min-height: 450px;
+    width: 500px;
+    border-radius: 20px;
+    text-align: center;
+    font-family: var(--fonte-padrao);
+    color: white;
+    padding-top: 25px;
+    line-height: 35px;
+    background-color: black;
+    box-shadow: 3px 3px 10px #676666;
+    
+}
+.promocao h3{
+    margin-top: 20px;
+   
+}
+.promocao h4{
+    margin-bottom: 20px;
+}
+.plano-btn-2{
+    background: linear-gradient(60deg, #00ffff, #FF02FF);
+    border: none;
+    cursor: pointer;
+    padding: 15px 30px;
+    border-radius: 10px 0px 10px 0px;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    margin-top: 30px;
+}
+footer {
+    background-color: var(--cor1);
+   color: var(--cor0);
+}
+
+
+.container {
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.feedback-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cor1);
+    padding: 20px;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+.text-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-section h1 {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.text-section img {
+    width: 50px;
+    height: 100px;
+    margin-top: 20px;
+}
+
+.feedback-form {
+    max-width: 600px;
+    flex-grow: 1;
+    margin-left: -30px;
+}
+
+.feedback-form p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    background-color: #00e600;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    outline: none;
+}
+
+textarea::placeholder {
+    color: white;
+    font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .feedback-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .text-section h1 {
+        font-size: 36px;
+    }
+
+    .feedback-form {
+        margin-left: 0;
+    }
+
+    textarea {
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-section h1 {
+        font-size: 28px;
+    }
+
+    .feedback-form p {
+        font-size: 16px;
+    }
+
+    textarea {
+        height: 100px;
+    }
+}
+
+@media (min-width: 700px) {
+    header {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .botoes {
+        gap: 30px;
+    }
+
+    .botoes button {
+        font-size: 1.1rem;
+        padding: 12px 25px;
+    }
+}
+
+/* Telas Menores que 870px */
+@media screen and (max-width: 870px) {
+    .esquerda{
+        display: none;
+    }
+    .direita {
+        display: none;
+    }
+}
+
+/* Telas Menores que 800px */
+@media (max-width: 800px) {
+    section {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+
+    main p {
+        font-size: 0.9rem;
+        margin-bottom: 40px;
+    }
+
+    main h1 {
+        font-size: 2rem;
+    }
+
+    main h3 {
+        font-size: 1rem;
+    }
+
+    .lista {
+        font-size: 1rem;
+    }
+
+    .first-card,
+    .second-card,
+    .third-card,
+    .fourth-card {
+        height: 200px;
+        width: 60%;
+    }
+
+    .first-card h3,
+    .second-card h3,
+    .third-card h3,
+    .fourth-card h3 {
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+
+    .lista {
+        padding: 10px 0px 20px 10px;
+    }
+}
+
+/* Telas Menores que 700px */
+@media (max-width: 700px) {
+    header {
+        flex-wrap: nowrap;
+        /* Impede os botões de ficarem abaixo da imagem */
+    }
+
+    .botoes {
+        flex-direction: row;
+        /* Garante que os botões fiquem em linha */
+        gap: 10px;
+        /* Ajusta o espaçamento para telas menores */
+    }
+
+    .botoes button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    .esquerda {
+        flex-wrap: nowrap;
+        font-size: 10pt;
+        gap: 40px;
+        padding-right: 10px;
+    }
+
+    main h1 {
+        font-size: 1.5rem;
+    }
+
+    main h3 {
+        font-size: 0.9rem;
+    }
+
+    main p {
+        font-size: 0.9rem;
+        width: 67%;
+        margin-bottom: 25px;
+    }
+
+    .lista {
+        font-size: 0.9rem;
+    }
+
+    .espacamento-duvidas {
+        margin-top: 30px;
+    }
+
+}
+
+/* Telas Menores que 550px */
+@media (max-width: 550px) {
+    .esquerda {
+        flex-wrap: nowrap;
+        font-size: 10pt;
+        gap: 25px;
+        padding-right: 10px;
+    }
+
+    main h1 {
+        font-size: 1.2rem;
+    }
+
+    main p {
+        font-size: 0.8rem;
+        width: 70%;
+    }
+}
