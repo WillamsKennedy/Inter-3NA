@@ -69,10 +69,14 @@
                     </div>
 
                     <?php 
-                        if(isset($_SESSION['senhainvalida']) ):
+                        if(isset($_SESSION['senhainvalida'])):
                     ?>
                     <div>
-                        <p>Senha inválida!</p>
+                        <p class="error-message">
+                            <?php  
+                                echo $_SESSION['senhainvalida']; 
+                            ?>
+                        </p>
                     </div>
                     <?php 
                         endif;
@@ -80,7 +84,7 @@
                         
                     ?>
                     <div class="input-box">
-                        <input type="password" class="input-field" placeholder="Senha" name="pass" id="idpass" required>
+                        <input type="password" class="input-field" placeholder="Senha" name="senha" id="idsenha" required>
                         <i class="bx bx-lock-alt icon"></i>
                     </div>
 

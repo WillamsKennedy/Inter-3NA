@@ -28,14 +28,24 @@
             </div>
 
             <!--Login form container-->
-            <form class="regsiter-form" method="POST" action="cadastroPasso2.php">
+            <form class="regsiter-form" method="POST" action="cadastroPasso3.php">
                 <div class="form-title">
                     <!-- <span>Registro</span> -->
                 </div>
-               
+                <!-- Caso o email não esteja valido deve aparecer -->
+                 <!-- Ao apertar F5 deve desaparecer -->
+                <?php 
+                    if(isset($_SESSION['erroEmail']) ):
+                ?>
                 <div>
                     <p>Email inválido.</p>
                 </div>
+                <?php 
+                    unset($_SESSION['erroEmail']);
+                    endif;
+                    
+                ?>
+
                 <div class="form-inputs">
                     <div class="input-box">
                         <input type="text" class="input-field" placeholder="Email" name="email" id="idemail" required>
@@ -63,12 +73,12 @@
                     
 
                     <div class="input-box" >
-                        <a href="cadastroPasso3.php">
+                        
                             <button type="submit" class="input-submit" name="registro" id="idregistro">
                                 <span>Próximo</span>
                                 <i class="bx bx-right-arrow-alt"></i>
                             </button>
-                        </a>
+                        
                     </div>
                     </div>
 

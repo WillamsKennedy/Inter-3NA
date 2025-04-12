@@ -1,4 +1,5 @@
 <?php
+
 require('conexaobd.php');
 session_start(); 
 
@@ -8,6 +9,8 @@ if (!isset($_SESSION['cadastro']) || !isset($_SESSION['cadastroPasso2']) || !iss
 }
 
 $dados = array_merge($_SESSION['cadastro'], $_SESSION['cadastroPasso2'], $_SESSION['cadastroPasso3']);
+
+$hash_senha = password_hash($_SESSION['cadastro']['senha'], PASSWORD_DEFAULT);
 
 echo "<h1>Cadastro Concluído!</h1>";
 echo "<pre>";
@@ -27,15 +30,16 @@ if ($resultado) {
     echo "CPF não existe, pode ser inserido.";
 
     
-    $query = "INSERT INTO clientes(nome, cpf, dataNascimento, senha, telefone, endereco, numero, bairro, complemento, cep) 
-              VALUES (:nome, :cpf, :nascimento, :senha, :telefone, :endereco, :numero, :bairro, :complemento, :cep)";
+    $query = "INSERT INTO clientes(nome, cpf, dataNascimento, senha, telefone, endereco, numero, bairro, complemento, cep, email, plano) 
+              VALUES (:nome, :cpf, :nascimento, :senha, :telefone, :endereco, :numero, :bairro, :complemento, :cep, :email, :plano)";
+    
     
     $stmt = $pdo->prepare($query);
     $stmt->execute([
         ':nome' => $_SESSION['cadastro']['nome'],
         ':cpf' => $_SESSION['cadastro']['cpf'],
         ':nascimento' => $_SESSION['cadastro']['nascimento'],
-        ':senha' => $_SESSION['cadastro']['senha'],
+        ':senha' => $hash_senha,
         ':telefone' => $_SESSION['cadastroPasso2']['telefone'],
         ':endereco' => $_SESSION['cadastroPasso2']['endereco'],
         ':numero' => $_SESSION['cadastroPasso2']['numero'],

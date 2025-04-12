@@ -35,11 +35,13 @@
                 <p><strong>Bairro:</strong> <?php echo htmlspecialchars($dados['bairro']); ?></p>
                 <p><strong>Complemento:</strong> <?php echo htmlspecialchars($dados['complemento']); ?></p>
                 <p><strong>CEP:</strong> <?php echo htmlspecialchars($dados['cep']); ?></p>
+                <p><strong>Email:</strong> <?php echo htmlspecialchars($dados['email']); ?></p>
+                <p><strong>Plano:</strong> <?php echo htmlspecialchars($dados['plano']); ?></p>
             </div>
             
-            <p style="text-align: center; margin-top: 30px;">
+            <!-- <p style="text-align: center; margin-top: 30px;">
                 <a href="login.html" style="background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;">Ir para Login</a>
-            </p>
+            </p> -->
         <?php endif; ?>
     </div>
 </body>

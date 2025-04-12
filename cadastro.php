@@ -10,7 +10,7 @@
       'nome' => $_POST["nome"],
       'cpf' => $_POST["cpf"],
       'nascimento' => $_POST["nascimento"],
-      'senha' => $_POST["pass"]
+      'senha' => $_POST["senha"]
     ];
 
     
@@ -18,11 +18,11 @@
 
     if($verificarSenha === true) {
       //Redireciona para passo 2
+      //$_SESSION['cadastro']['senha'] = password_hash($_SESSION['cadastro']['senha'], PASSWORD_DEFAULT);
       header('Location: signupClienteP2.html');
-      exit; 
-      
+      exit;
     } else {
-      $_SESSION['senhainvalida'] = true;
+      $_SESSION['senhainvalida'] = $verificarSenha;
       header('Location: signupCliente.php');
       exit;
     }
