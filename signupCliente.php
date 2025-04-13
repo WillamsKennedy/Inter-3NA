@@ -1,6 +1,4 @@
-<?php 
-    session_start();
-?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -14,15 +12,18 @@
     <link rel="stylesheet" href="signupCliente.css">
 </head>
 <body>
+    <?php 
+        session_start();
+    ?>
     <?php include 'funcoes.php'?>
     <div class="form-container">
         <div class="col col-1">
-            <p class="featured-words">Página de <span>Usuário</span></p>
+            <p class="featured-words">Página de <span>Registro</span></p>
         </div>
 
 
         <div class="col col-2">
-            <a href="loginCliente.html">
+            <a href="loginCliente.php">
                 <div class="btn-box">
                     <button class="btn btn-2" id="login">
                         Login
@@ -62,12 +63,21 @@
                         <input type="text" class="input-field" placeholder="Nascimento: yyyy-mm-dd" name="nascimento" id="idnascimento" required>
                         <i class="bx bx-lock-alt icon"></i>
                     </div>
-
-                    <div class="">
+                    <!--  -->
+                    <?php 
+                        if(!isset($_SESSION['senhainvalida'])):
+                    ?>
+                    <div class="error-message">
                         <p>A senha deve conter no mínimo 8 caracteres</p>
                         <p>1 Letra Maiúscula, 1 letra minúscula, 1 número, 1 caractere especial</p>
                     </div>
-
+                    <?php 
+                            unset($_SESSION['senhainvalida']);
+                       endif;
+                        
+                        
+                    ?>
+                    <!--  -->
                     <?php 
                         if(isset($_SESSION['senhainvalida'])):
                     ?>

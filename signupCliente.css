@@ -115,6 +115,10 @@ body{
      margin: 40px 20px; 
 }
 
+.error-message {
+    color: red;
+}
+
 .form-title{
      margin: 40px 0;
     color: #fff;
@@ -218,3 +222,4 @@ body{
         width: 100%;
     }
 }
+

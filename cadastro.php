@@ -18,7 +18,6 @@
 
     if($verificarSenha === true) {
       //Redireciona para passo 2
-      //$_SESSION['cadastro']['senha'] = password_hash($_SESSION['cadastro']['senha'], PASSWORD_DEFAULT);
       header('Location: signupClienteP2.html');
       exit;
     } else {

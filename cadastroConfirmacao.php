@@ -10,7 +10,7 @@ if (!isset($_SESSION['cadastro']) || !isset($_SESSION['cadastroPasso2']) || !iss
 
 $dados = array_merge($_SESSION['cadastro'], $_SESSION['cadastroPasso2'], $_SESSION['cadastroPasso3']);
 
-$hash_senha = password_hash($_SESSION['cadastro']['senha'], PASSWORD_DEFAULT);
+
 
 echo "<h1>Cadastro Concluído!</h1>";
 echo "<pre>";
@@ -39,7 +39,7 @@ if ($resultado) {
         ':nome' => $_SESSION['cadastro']['nome'],
         ':cpf' => $_SESSION['cadastro']['cpf'],
         ':nascimento' => $_SESSION['cadastro']['nascimento'],
-        ':senha' => $hash_senha,
+        ':senha' => $_SESSION['cadastro']['senha'],
         ':telefone' => $_SESSION['cadastroPasso2']['telefone'],
         ':endereco' => $_SESSION['cadastroPasso2']['endereco'],
         ':numero' => $_SESSION['cadastroPasso2']['numero'],
