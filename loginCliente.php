@@ -1,4 +1,6 @@
-
+<?php 
+        session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -12,14 +14,11 @@
     <link rel="stylesheet" href="loginCliente.css">
 </head>
 <body>
-    <?php 
-        session_start();
-    ?>
+    
     <div class="form-container">
         <div class="col col-1">
-            <p class="featured-words">Página do <span>Usuário</span></p>
+            <p class="featured-words">Login <span>Usuário</span></p>
         </div>
-
 
         <div class="col col-2">
             <a href="loginCliente.php">

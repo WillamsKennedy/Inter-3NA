@@ -1,3 +1,12 @@
+<?php 
+        session_start();
+
+        if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
+            header('Location: loginCliente.php');
+            exit;
+        }
+    ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -14,6 +23,7 @@
 </head>
 
 <body>
+    
     <!--Botao flutuante whatsapp-->
     <div class="button-whatsapp">
         <a href='https://api.whatsapp.com/send?phone=5581985960647&' target="_blank" class="icon">
@@ -22,12 +32,24 @@
     </div>
     <header>
         <div>
-            <a href="index.html" name="top"><img src="img/img-bobnet.png" alt="imagem_Bob_Net" ></a>
+            <a href="index.php" name="top"><img src="img/img-bobnet.png" alt="imagem_Bob_Net" ></a>
         </div>
+
+        <div class="">
+            <p class="usuario">
+                <?php 
+                    echo $_SESSION['username']."<br>";
+                    echo $_SESSION['planoatual'];
+                ?>
+            </p>
+        </div>
+
         <div class=" botoes">
-            <a href="main-page.html">
+            <a href="logout.php">
                 <button class="AreaCliente">
                     sair
+                    
+
                 </button>
             </a>
         </div>
@@ -58,7 +80,9 @@
 
             <div class="exibir-info">
                 <h2>Plano atual</h2>
-                PLANO PRIME 100 MEGA
+                <?php 
+                    echo $_SESSION['planoatual'];
+                ?>
             </div>
 
 

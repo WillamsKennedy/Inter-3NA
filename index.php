@@ -14,6 +14,9 @@
 </head>
 
 <body>
+    <?php 
+        session_start();
+    ?>
     <!--Botao flutuante whatsapp-->
     <div class="button-whatsapp">
         <a href='https://api.whatsapp.com/send?phone=5581985960647&' target="_blank" class="icon">
@@ -22,7 +25,15 @@
     </div>
     <header>
         <div>
-            <a href="index.html" name="top"><img src="img/img-bobnet.png" alt="imagem_Bob_Net" ></a>
+            <a href="index.php" name="top"><img src="img/img-bobnet.png" alt="imagem_Bob_Net" ></a>
+        </div>
+        
+        <div>
+            <a href="areaCliente.php">
+                <button class="AreaCliente">
+                    Area do Cliente
+                </button>
+            </a>
         </div>
         
         <div class=" botoes">
@@ -37,6 +48,7 @@
                 </button>
             </a>
         </div>
+        
     </header>
     <nav>
         <div class="bob-fibra">

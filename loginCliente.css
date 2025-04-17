@@ -56,6 +56,10 @@ body{
     font-weight: 600;
     color: #21264D;
 }
+
+.error-message p{
+    color: rgb(100, 31, 146);
+}
 /*==== SECOND COLUMN ====*/
 .col-2{
     position: relative;

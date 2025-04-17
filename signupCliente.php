@@ -15,7 +15,6 @@
     <?php 
         session_start();
     ?>
-    <?php include 'funcoes.php'?>
     <div class="form-container">
         <div class="col col-1">
             <p class="featured-words">Página de <span>Registro</span></p>
@@ -54,7 +53,22 @@
                         <input type="text" class="input-field" placeholder="Nome" name="nome" id="idnome" required>
                         <i class="bx bx-user icon"></i>
                     </div>
-
+                    <?php 
+                        if(isset($_SESSION['ja_existe'])):
+                    ?>
+                    <div>
+                        <p class="error-message">
+                            <?php  
+                                echo 'CPF já cadastrado';
+                            ?>
+                        </p>
+                    </div>
+                    <?php
+                        endif;
+                        unset($_SESSION['ja_existe']);
+                        
+                    ?>
+                
                     <div class="input-box">
                         <input type="text" class="input-field" placeholder="CPF" name="cpf" id="idcpf" required>
                         <i class="bx bx-lock-alt icon"></i>
@@ -68,8 +82,8 @@
                         if(!isset($_SESSION['senhainvalida'])):
                     ?>
                     <div class="error-message">
-                        <p>A senha deve conter no mínimo 8 caracteres</p>
-                        <p>1 Letra Maiúscula, 1 letra minúscula, 1 número, 1 caractere especial</p>
+                        <p>A senha deve conter no mínimo 8 caracteres -</p>
+                        <p>1 Letra Maiúscula - 1 letra minúscula - 1 número - 1 caractere especial</p>
                     </div>
                     <?php 
                             unset($_SESSION['senhainvalida']);
@@ -81,8 +95,8 @@
                     <?php 
                         if(isset($_SESSION['senhainvalida'])):
                     ?>
-                    <div>
-                        <p class="error-message">
+                    <div class="error-message">
+                        <p >
                             <?php  
                                 echo $_SESSION['senhainvalida']; 
                             ?>

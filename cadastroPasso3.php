@@ -18,7 +18,7 @@
     $verificarEmail = verificarEmail($_SESSION['cadastroPasso3']['email']);
 
   if($verificarEmail === true) {
-    header('Location: cadastroConfirmacao.php');
+    header('Location: signupDataConfirmation.php');
     exit;
   } else {
     $_SESSION['erroEmail'] = true;

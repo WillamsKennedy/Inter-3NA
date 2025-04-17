@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+    include('funcoes.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,39 +14,55 @@
     <link rel="stylesheet" href="signupCliente.css">
 </head>
 <body>
-<div class="container">
-        <h1>Cadastro Concluído!</h1>
+<form class="container" action="cadastroConfirmacao.php">
         
-        <?php if ($resultado): ?>
+        
+        <?php if (verificarCpfBd($_SESSION['cadastro']['cpf'])): ?>
             <div class="error-message">
-                CPF já cadastrado em nosso sistema. Por favor, verifique seus dados ou entre em contato com o suporte.
+                <h2>CPF já cadastrado em nosso sistema. Por favor, verifique seus dados ou entre em contato com o suporte.</h2>
+                <?php 
+                    $_SESSION['ja_existe'] = true;
+                    header('Location: signupCliente.php');
+                ?>
             </div>
         <?php else: ?>
+            <h1>Cadastro Concluído!</h1>
             <div class="success-message">
-                Seu cadastro foi realizado com sucesso! Abaixo estão os dados registrados:
+                <h3>Seu cadastro foi realizado com sucesso! Abaixo estão os dados registrados:</h3><br>
             </div>
             
             <div class="dados-cadastro">
+            
                 <h2>Dados Pessoais</h2>
-                <p><strong>Nome:</strong> <?php echo htmlspecialchars($dados['nome']); ?></p>
-                <p><strong>CPF:</strong> <?php echo htmlspecialchars($dados['cpf']); ?></p>
-                <p><strong>Data de Nascimento:</strong> <?php echo htmlspecialchars($dados['nascimento']); ?></p>
-                <p><strong>Telefone:</strong> <?php echo htmlspecialchars($dados['telefone']); ?></p>
+                <p><strong>Nome:</strong> <?php echo htmlspecialchars($_SESSION['cadastro']['nome']);//htmlspecialchars sendo usado para evitar bugs com caracteres especiais ?></p>
+                <p><strong>CPF:</strong> <?php echo htmlspecialchars($_SESSION['cadastro']['cpf']); ?></p>
+                <p><strong>Data de Nascimento:</strong> <?php echo htmlspecialchars($_SESSION['cadastro']['nascimento']); ?></p>
+                <p><strong>Telefone:</strong> <?php echo htmlspecialchars($_SESSION['cadastroPasso2']['telefone']); ?></p>
                 
                 <h2>Endereço</h2>
-                <p><strong>Endereço:</strong> <?php echo htmlspecialchars($dados['endereco']); ?></p>
-                <p><strong>Número:</strong> <?php echo htmlspecialchars($dados['numero']); ?></p>
-                <p><strong>Bairro:</strong> <?php echo htmlspecialchars($dados['bairro']); ?></p>
-                <p><strong>Complemento:</strong> <?php echo htmlspecialchars($dados['complemento']); ?></p>
-                <p><strong>CEP:</strong> <?php echo htmlspecialchars($dados['cep']); ?></p>
-                <p><strong>Email:</strong> <?php echo htmlspecialchars($dados['email']); ?></p>
-                <p><strong>Plano:</strong> <?php echo htmlspecialchars($dados['plano']); ?></p>
+                <p><strong>Endereço:</strong> <?php echo htmlspecialchars($_SESSION['cadastroPasso2']['endereco']); ?></p>
+                <p><strong>Número:</strong> <?php echo htmlspecialchars($_SESSION['cadastroPasso2']['numero']); ?></p>
+                <p><strong>Bairro:</strong> <?php echo htmlspecialchars($_SESSION['cadastroPasso2']['bairro']); ?></p>
+                <p><strong>Complemento:</strong> <?php echo htmlspecialchars($_SESSION['cadastroPasso2']['complemento']); ?></p>
+                <p><strong>CEP:</strong> <?php echo htmlspecialchars($_SESSION['cadastroPasso2']['cep']); ?></p>
+                <p><strong>Email:</strong> <?php echo htmlspecialchars($_SESSION['cadastroPasso3']['email']); ?></p>
+                <p><strong>Plano:</strong> <?php echo htmlspecialchars($_SESSION['cadastroPasso3']['plano']); ?></p>
+
+                <div class="input-box" >
+                    <button type="submit" class="input-submit" name="registro" id="idregistro">
+                        Próximo 
+                        <i class="bx bx-right-arrow-alt"></i>
+                    </button>
+                </div>
             </div>
             
             <!-- <p style="text-align: center; margin-top: 30px;">
                 <a href="login.html" style="background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;">Ir para Login</a>
             </p> -->
         <?php endif; ?>
-    </div>
+        
+        </form>
+
+    
 </body>
 </html>

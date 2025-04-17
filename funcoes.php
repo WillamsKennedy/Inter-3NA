@@ -1,5 +1,5 @@
 <?php
-
+    
     /*Função para verificar senhas fortes
         Verifica 6 requisitos para senhas seguras
         
@@ -51,5 +51,19 @@
         }
 
         return true;
+    }
+
+    /*
+        Verificar CPF no BD
+    */
+
+    function verificarCpfBd($cpfUsuario) {
+        require('conexaobd.php');
+        $sql = "SELECT * FROM clientes WHERE cpf = :cpf";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':cpf', $cpfUsuario, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 ?> 
