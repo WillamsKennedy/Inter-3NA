@@ -16,10 +16,15 @@
         session_start();
     ?>
     <div class="form-container">
-        <div class="col col-1">
+        <form class="col col-1" action="index.php">
+            <div>
+                <button class="btn btn-2" type="submit" id="login">
+                    Início
+                </button>
+            </div>
             <p class="featured-words">Página de <span>Registro</span></p>
-        </div>
-
+        
+        </form>
 
         <div class="col col-2">
             <a href="loginCliente.php">
@@ -50,7 +55,7 @@
                 </div>
                 <div class="form-inputs">
                     <div class="input-box">
-                        <input type="text" class="input-field" placeholder="Nome" name="nome" id="idnome" required>
+                        <input type="text" class="input-field" placeholder="Nome completo" name="nome" id="idnome" required>
                         <i class="bx bx-user icon"></i>
                     </div>
                     <?php 
@@ -117,12 +122,10 @@
                     </div>
 
                     <div class="input-box" >
-                        <a href="cadastro.php">
                             <button type="submit" class="input-submit" name="registro" id="idregistro">
                                 <span>Registrar</span>
                                 <i class="bx bx-right-arrow-alt"></i>
                             </button>
-                        </a>
                     </div>
                     </div>
             </form>

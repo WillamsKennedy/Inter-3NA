@@ -1,3 +1,11 @@
+<?php 
+        session_start();
+        // Caso seja null torna falso.
+        if (!isset($_SESSION['logado'])) {
+            $_SESSION['logado'] = false;
+        }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -14,9 +22,7 @@
 </head>
 
 <body>
-    <?php 
-        session_start();
-    ?>
+    
     <!--Botao flutuante whatsapp-->
     <div class="button-whatsapp">
         <a href='https://api.whatsapp.com/send?phone=5581985960647&' target="_blank" class="icon">
@@ -27,7 +33,7 @@
         <div>
             <a href="index.php" name="top"><img src="img/img-bobnet.png" alt="imagem_Bob_Net" ></a>
         </div>
-        
+        <?php if($_SESSION['logado']):?>
         <div>
             <a href="areaCliente.php">
                 <button class="AreaCliente">
@@ -35,7 +41,7 @@
                 </button>
             </a>
         </div>
-        
+        <?php else:?>
         <div class=" botoes">
             <a href='https://api.whatsapp.com/send?phone=5581985960647&' target="_blank">
                 <button class="Login">
@@ -48,7 +54,7 @@
                 </button>
             </a>
         </div>
-        
+        <?php endif;?>
     </header>
     <nav>
         <div class="bob-fibra">

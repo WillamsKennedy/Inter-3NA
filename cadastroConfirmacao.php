@@ -48,7 +48,7 @@ if ($resultado) {
         ':plano' => $_SESSION['cadastroPasso3']['plano']
     ]);
 
-    header('Location: signupDataConfirmation.php');
+    header('Location: loginCliente.php');
 //}
 
 $pdo = null;

@@ -39,7 +39,7 @@
             <p class="usuario">
                 <?php 
                     echo $_SESSION['username']."<br>";
-                    echo $_SESSION['planoatual'];
+                    
                 ?>
             </p>
         </div>

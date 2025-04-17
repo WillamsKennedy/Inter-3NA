@@ -11,9 +11,15 @@
 </head>
 <body>
     <div class="form-container">
-        <div class="col col-1">
-            <p class="featured-words">Página de <span>Usuário</span></p>
-        </div>
+    <form class="col col-1" action="index.php">
+            <div>
+                <button class="btn btn-2" type="submit" id="login">
+                    Início
+                </button>
+            </div>
+            <p class="featured-words">Página de <span>Registro</span></p>
+        
+        </form>
 
 
             

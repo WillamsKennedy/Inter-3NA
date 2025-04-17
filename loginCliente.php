@@ -16,9 +16,16 @@
 <body>
     
     <div class="form-container">
-        <div class="col col-1">
+        
+        <form class="col col-1" action="index.php">
+            <div>
+                
+                <button class="btn btn-2" type="submit" id="login">
+                    Início
+                </button>
+            </div>
             <p class="featured-words">Login <span>Usuário</span></p>
-        </div>
+        </form>
 
         <div class="col col-2">
             <a href="loginCliente.php">
