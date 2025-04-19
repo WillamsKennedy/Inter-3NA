@@ -2,7 +2,12 @@
         session_start();
         // Caso seja null torna falso.
         if (!isset($_SESSION['logado'])) {
-            $_SESSION['logado'] = false;
+            $_SESSION['logado']  = false;
+            
+        }
+
+        if (!isset($_SESSION['logadoFuncionario'])) {
+            $_SESSION['logadoFuncionario'] = false;
         }
 ?>
 
@@ -41,6 +46,15 @@
                 </button>
             </a>
         </div>
+        <?php elseif($_SESSION['logadoFuncionario']):?>
+        <div>
+            <a href="areaFuncionario.php">
+                <button class="AreaCliente">
+                    Area do Funcionario
+                </button>
+            </a>
+        </div>
+        
         <?php else:?>
         <div class=" botoes">
             <a href='https://api.whatsapp.com/send?phone=5581985960647&' target="_blank">

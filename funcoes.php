@@ -66,4 +66,35 @@
 
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    function verificarTudoBd() {
+        require('conexaobd.php');
+
+        try {
+            
+            $stmt = $pdo->query("SELECT idClientes, nome, cpf, dataNascimento, endereco, numero, bairro, complemento, cep, telefone, email, plano FROM clientes");
+            
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            error_log("Erro ao buscar usuários: " . $e->getMessage());
+            return [];
+        }
+        /*
+        $sql = "SELECT DISTINCT * FROM clientes WHERE nome LIKE '%w%'";
+        $stmt = $pdo->prepare($sql);
+        //$stmt->bindParam(':cpf', $cpfUsuario, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+        */
+    }
+
+    function verificarFuncionario($cpfFuncionario) {
+        require('conexaobd.php');
+        $stmt = $pdo->prepare("SELECT  idFuncionario, cpf, nome, senha, cargo FROM funcionarios WHERE cpf = ?");
+        $stmt->execute([$cpfFuncionario]);
+        return $stmt->fetch();
+    }
+
+    
 ?> 

@@ -9,28 +9,9 @@ if (!isset($_SESSION['cadastro']) || !isset($_SESSION['cadastroPasso2']) || !iss
 }
 
 $dados = array_merge($_SESSION['cadastro'], $_SESSION['cadastroPasso2'], $_SESSION['cadastroPasso3']);
-
-
-
-
-
-
-// Verifica se CPF já existe
-/*$sql = "SELECT * FROM clientes WHERE cpf = :cpf";
-$stmt = $pdo->prepare($sql);
-$stmt->bindParam(':cpf', $_SESSION['cadastro']['cpf'], PDO::PARAM_STR);
-$stmt->execute();
-$resultado = verificarCpfBd($_SESSION['cadastro']['cpf']);
-
-if ($resultado) {
-    //echo "CPF já existe no banco de dados.";
-    $_SESSION['ja_existe'] = true;
-    header('Location: signupCliente.php');
-} else {*/
         
     $query = "INSERT INTO clientes(nome, cpf, dataNascimento, senha, telefone, endereco, numero, bairro, complemento, cep, email, plano) 
               VALUES (:nome, :cpf, :nascimento, :senha, :telefone, :endereco, :numero, :bairro, :complemento, :cep, :email, :plano)";
-    
     
     $stmt = $pdo->prepare($query);
     $stmt->execute([
@@ -54,41 +35,4 @@ if ($resultado) {
 $pdo = null;
 //session_destroy();
 exit;
-?>
-
-<?php
-/*
-  session_start();
-  require("conexaobd.php");
-  
-  
-
-  if($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-    $nome = $_POST["plano"];
-    $cpf = $_POST["email"];
-    $senha = $_POST["pass"];
-
-    $sql = "SELECT * FROM clientes WHERE cpf = :cpf";
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(':cpf', $cpf,PDO::PARAM_STR);
-    $stmt->execute();
-    $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-    
-    if ($resultado > 0) {
-        echo "CPF já existe no banco de dados.";
-    } else {
-        echo "CPF não existe, pode ser inserido.";
-
-      $query = "INSERT INTO clientes(nome,cpf,senha) VALUES ('$nome',cpf',//'$senha')";
-
-       $stmt = $pdo->prepare($query);
-       $stmt->execute();
-    }
-
-    $pdo = null;
-  }
-    
-*/
 ?>

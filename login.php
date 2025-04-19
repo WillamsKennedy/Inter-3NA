@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    include('funcoes.php');
     require("conexaobd.php");
     $erro = '';
 
@@ -14,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt->execute([$cpf]);
             $user = $stmt->fetch();
             
+
             //var_dump($user);
             
             if ($user && $senha === $user['senha']) {
@@ -25,6 +27,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 ];
                 header('Location: areaCliente.php');
                 exit;
+            }
+            
+            $funcionario = verificarFuncionario($cpf);
+            if ($funcionario && $senha === $funcionario['senha']) {
+                $_SESSION = [
+                    'user_id' => $funcionario['idFuncionario'],
+                    'username' => $funcionario['nome'],
+                    'cargo' => $funcionario['cargo'],
+                    'logadoFuncionario' => true
+                ];
+                header('Location: areaFuncionario.php');
             } else {
                 $_SESSION['senhainvalida'] = true;
                 header('Location: loginCliente.php');
@@ -34,4 +47,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
        
     } 
 }
+?>
+
+<?php 
+   /*         
+            elseif($_SESSION['logadoFuncionario']):
+        ?>
+        <div>
+            <a href="areaFuncioanrio.php">
+                <button class="AreaCliente">
+                    Area do funcionario
+                </button>
+            </a>
+        </div>
+    */
 ?>
