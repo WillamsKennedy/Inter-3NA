@@ -1,11 +1,11 @@
-<?php 
-        session_start();
+<?php
+session_start();
 
-        if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
-            header('Location: loginCliente.php');
-            exit;
-        }
-    ?>
+if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
+    header('Location: loginCliente.php');
+    exit;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    
+
     <!--Botao flutuante whatsapp-->
     <div class="button-whatsapp">
         <a href='https://api.whatsapp.com/send?phone=5581985960647&' target="_blank" class="icon">
@@ -32,14 +32,14 @@
     </div>
     <header>
         <div>
-            <a href="index.php" name="top"><img src="img/img-bobnet.png" alt="imagem_Bob_Net" ></a>
+            <a href="index.php" name="top"><img src="img/img-bobnet.png" alt="imagem_Bob_Net"></a>
         </div>
 
         <div class="">
             <p class="usuario">
-                <?php 
-                    echo $_SESSION['username']."<br>";
-                    
+                <?php
+                echo $_SESSION['username'] . "<br>";
+
                 ?>
             </p>
         </div>
@@ -48,7 +48,7 @@
             <a href="logout.php">
                 <button class="AreaCliente">
                     sair
-                    
+
 
                 </button>
             </a>
@@ -80,8 +80,8 @@
 
             <div class="exibir-info">
                 <h2>Plano atual</h2>
-                <?php 
-                    echo $_SESSION['planoatual'];
+                <?php
+                echo $_SESSION['planoatual'];
                 ?>
             </div>
 
@@ -102,9 +102,9 @@
         <div class="alter-plano">
             <h1>Alterar plano</h1>
         </div>
-        
+
         <section id="alterar">
-            
+
             <div class="first-card">
                 <h2>PLANO SUPER</h2>
                 <h2>70 MEGA</h2>
@@ -120,7 +120,7 @@
                         </button>
                     </a>
                 </div>
-                
+
             </div>
             <div class="third-card">
                 <h2>PLANO HIPER</h2>
@@ -177,7 +177,7 @@
             <div class="feedback-section">
                 <div class="text-section">
                     <h1>Feed<br>Back</h1>
-                    
+
                 </div>
                 <div class="feedback-form">
                     <p>O seu feedback impulsiona nossa empresa a evoluir e atender melhor às suas expectativas!</p>

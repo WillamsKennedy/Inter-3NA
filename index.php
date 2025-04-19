@@ -1,14 +1,13 @@
-<?php 
-        session_start();
-        // Caso seja null torna falso.
-        if (!isset($_SESSION['logado'])) {
-            $_SESSION['logado']  = false;
-            
-        }
+<?php
+session_start();
+// Caso seja null torna falso.
+if (!isset($_SESSION['logado'])) {
+    $_SESSION['logado']  = false;
+}
 
-        if (!isset($_SESSION['logadoFuncionario'])) {
-            $_SESSION['logadoFuncionario'] = false;
-        }
+if (!isset($_SESSION['logadoFuncionario'])) {
+    $_SESSION['logadoFuncionario'] = false;
+}
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +26,7 @@
 </head>
 
 <body>
-    
+
     <!--Botao flutuante whatsapp-->
     <div class="button-whatsapp">
         <a href='https://api.whatsapp.com/send?phone=5581985960647&' target="_blank" class="icon">
@@ -36,46 +35,46 @@
     </div>
     <header>
         <div>
-            <a href="index.php" name="top"><img src="img/img-bobnet.png" alt="imagem_Bob_Net" ></a>
+            <a href="index.php" name="top"><img src="img/img-bobnet.png" alt="imagem_Bob_Net"></a>
         </div>
-        <?php if($_SESSION['logado']):?>
-        <div>
-            <a href="areaCliente.php">
-                <button class="AreaCliente">
-                    Area do Cliente
-                </button>
-            </a>
-        </div>
-        <?php elseif($_SESSION['logadoFuncionario']):?>
-        <div>
-            <a href="areaFuncionario.php">
-                <button class="AreaCliente">
-                    Area do Funcionario
-                </button>
-            </a>
-        </div>
-        
-        <?php else:?>
-        <div class=" botoes">
-            <a href='https://api.whatsapp.com/send?phone=5581985960647&' target="_blank">
-                <button class="Login">
-                    Assine
-                </button>
-            </a>
-            <a href="loginCliente.php">
-                <button class="AreaCliente">
-                    Sou cliente
-                </button>
-            </a>
-        </div>
-        <?php endif;?>
+        <?php if ($_SESSION['logado']): ?>
+            <div>
+                <a href="areaCliente.php">
+                    <button class="AreaCliente">
+                        Area do Cliente
+                    </button>
+                </a>
+            </div>
+        <?php elseif ($_SESSION['logadoFuncionario']): ?>
+            <div>
+                <a href="areaFuncionario.php">
+                    <button class="AreaCliente">
+                        Area do Funcionario
+                    </button>
+                </a>
+            </div>
+
+        <?php else: ?>
+            <div class=" botoes">
+                <a href='https://api.whatsapp.com/send?phone=5581985960647&' target="_blank">
+                    <button class="Login">
+                        Assine
+                    </button>
+                </a>
+                <a href="loginCliente.php">
+                    <button class="AreaCliente">
+                        Sou cliente
+                    </button>
+                </a>
+            </div>
+        <?php endif; ?>
     </header>
     <nav>
         <div class="bob-fibra">
             <h2>BOB FIBRA</h2>
         </div>
         <div class="esquerda">
-            
+
             <a href="#planos" class="links-ancoras">
                 <h4>Planos</h4>
             </a>
@@ -119,7 +118,7 @@
                         </button>
                     </a>
                 </div>
-                
+
             </div>
             <div class="second-card">
                 <h2>PLANO PRIME</h2>

@@ -1,14 +1,15 @@
-<?php 
-        session_start();
+<?php
+session_start();
 
-        if (!isset($_SESSION['logadoFuncionario']) || $_SESSION['logadoFuncionario'] !== true) {
-            header('Location: loginCliente.php');
-            exit;
-        }
-    ?>
+if (!isset($_SESSION['logadoFuncionario']) || $_SESSION['logadoFuncionario'] !== true) {
+  header('Location: loginCliente.php');
+  exit;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <title>Controle de Clientes</title>
@@ -36,7 +37,8 @@
       margin-bottom: 20px;
     }
 
-    input, button {
+    input,
+    button {
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 6px;
@@ -48,7 +50,8 @@
       background: #fff;
     }
 
-    th, td {
+    th,
+    td {
       padding: 10px;
       border: 1px solid #ddd;
       text-align: center;
@@ -72,24 +75,25 @@
     }
   </style>
 </head>
+
 <body>
   <form class="col col-1" action="index.php">
     <div>
-        <button class="btn btn-2" type="submit" id="login">
-            Início
-        </button>
+      <button class="btn btn-2" type="submit" id="login">
+        Início
+      </button>
     </div>
-    
-    </form>
-    <div class=" botoes">
-            <a href="logout.php">
-                <button class="btn btn-2">
-                    sair
-                    
 
-                </button>
-            </a>
-    </div>
+  </form>
+  <div class=" botoes">
+    <a href="logout.php">
+      <button class="btn btn-2">
+        sair
+
+
+      </button>
+    </a>
+  </div>
   <h1>Controle de Clientes</h1>
 
   <div class="form">
@@ -162,4 +166,5 @@
   </script>
 
 </body>
+
 </html>
