@@ -19,33 +19,44 @@ session_start();
 
     <div class="form-container">
 
-        <form class="col col-1" action="index.php">
-            <div>
+        <div class="col col-1">
+            <form action="index.php">
+                <div>
 
-                <button class="btn btn-2" type="submit" id="login">
-                    Início
-                </button>
-            </div>
-            <p class="featured-words">Login <span>Usuário</span></p>
-        </form>
+                    <button class="btn btn-2" type="submit" id="login">
+                        Início
+
+                    </button><br>
+
+                </div><br>
+
+            </form>
+            <form action="loginCadastroFuncionarios.php"><button type="submit" class="btn btn-2">
+                    <p class="featured-words">Login <span>Usuário</span></p>
+                </button></form>
+        </div>
+
+
+
+
 
         <div class="col col-2">
-            <a href="loginCliente.php">
-                <div class="btn-box">
-                    <button class="btn btn-1" id="login">
+
+            <div class="btn-box">
+                <a href="loginCliente.php"><button class="btn btn-1" id="login">
                         Login
-                    </button>
-                </div>
-            </a>
+                    </button></a>
+            </div>
+
 
             <div>
-                <a href="signupCliente.php">
-                    <div class="btn-box">
-                        <button class="btn btn-2" id="register">
+
+                <div class="btn-box">
+                    <a href="signupCliente.php"><button class="btn btn-2" id="register">
                             Registro
-                        </button>
-                    </div>
-                </a>
+                        </button></a>
+                </div>
+
             </div>
 
             <!--Login form container-->

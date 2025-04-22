@@ -93,10 +93,41 @@ function verificarTudoBd()
         */
 }
 
-function verificarFuncionario($cpfFuncionario)
+function verificarPlanos($idPlanos)
 {
     require('conexaobd.php');
-    $stmt = $pdo->prepare("SELECT  idFuncionario, cpf, nome, senha, cargo FROM funcionarios WHERE cpf = ?");
-    $stmt->execute([$cpfFuncionario]);
-    return $stmt->fetch();
+    try {
+        $sql = "SELECT idPlano, nome, megas, valor FROM planos WHERE idPlano = :idPlano";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':idPlano', $idPlanos, PDO::PARAM_INT);
+        $stmt->execute();
+        $plano = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($plano) {
+            return $plano;
+        } else {
+            return null;
+        }
+    } catch (PDOException $e) {
+        error_log("Ainda não tem um plano " . $e->getMessage());
+        return [];
+    }
+}
+
+function calcularProximoVencimento($dataContratacao, $diaVencimento)
+{
+    // Pega o ano e mês atual
+    $ano = date('Y');
+    $mes = date('m');
+
+    // Verifica se o dia de vencimento já passou neste mês
+    if (date('d') > $diaVencimento) {
+        $mes++; // Próximo mês
+        if ($mes > 12) {
+            $mes = 1;
+            $ano++;
+        }
+    }
+
+    // Formata a data (ex: "2025-05-10")
+    return date('Y-m-d', strtotime("$ano-$mes-$diaVencimento"));
 }

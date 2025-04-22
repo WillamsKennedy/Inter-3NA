@@ -10,7 +10,7 @@ if (!isset($_SESSION['cadastro']) || !isset($_SESSION['cadastroPasso2'])) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   //Recebe a informação do cadastro 3/3
   $_SESSION['cadastroPasso3'] = [
-    'plano' => $_POST["plano"],
+
     'email' => $_POST["email"]
   ];
 

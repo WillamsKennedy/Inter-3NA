@@ -125,7 +125,7 @@ body {
 }
 
 .register-form .form-title {
-    margin-block: 40px 20px;
+    margin: 40px 20px;
 }
 
 .form-title {
@@ -133,6 +133,10 @@ body {
     color: #fff;
     font-size: 28px;
     font-weight: 600;
+}
+
+.sucesso-mensagem {
+    color: green;
 }
 
 .form-inputs {

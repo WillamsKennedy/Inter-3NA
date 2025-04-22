@@ -39,7 +39,7 @@ if (!isset($_SESSION['logadoFuncionario'])) {
         </div>
         <?php if ($_SESSION['logado']): ?>
             <div>
-                <a href="areaCliente.php">
+                <a href="paginaCliente.php">
                     <button class="AreaCliente">
                         Area do Cliente
                     </button>
@@ -112,7 +112,7 @@ if (!isset($_SESSION['logadoFuncionario'])) {
                 <h4>+ IPTV streaming</h4>
                 <h5>Por:xxx/mês</h5>
                 <div class="btn-box">
-                    <a href='https://api.whatsapp.com/send?phone=5581985960647&' target="_blank">
+                    <a href='signupCliente.php'>
                         <button class="plano-btn">
                             <i class="fab fa-whatsapp"></i> ASSINE JÁ
                         </button>
@@ -129,7 +129,7 @@ if (!isset($_SESSION['logadoFuncionario'])) {
                 <h4>+ IPTV streaming</h4>
                 <h5>Por:xxx/mês</h5>
                 <div class="btn-box">
-                    <a href='https://api.whatsapp.com/send?phone=5581985960647&' target="_blank">
+                    <a href='signupCliente.php'>
                         <button class="plano-btn">
                             <i class="fab fa-whatsapp"></i> ASSINE JÁ
                         </button>
@@ -145,7 +145,7 @@ if (!isset($_SESSION['logadoFuncionario'])) {
                 <h4>+ IPTV streaming</h4>
                 <h5>Por:xxx/mês</h5>
                 <div class="btn-box">
-                    <a href='https://api.whatsapp.com/send?phone=5581985960647&' target="_blank">
+                    <a href='signupCliente.php'>
                         <button class="plano-btn">
                             <i class="fab fa-whatsapp"></i> ASSINE JÁ
                         </button>
@@ -161,7 +161,7 @@ if (!isset($_SESSION['logadoFuncionario'])) {
                 <h4>+ IPTV streaming</h4>
                 <h5>Por:xxx/mês</h5>
                 <div class="btn-box">
-                    <a href='https://api.whatsapp.com/send?phone=5581985960647&' target="_blank">
+                    <a href='signupCliente.php'>
                         <button class="plano-btn">
                             <i class="fab fa-whatsapp"></i> ASSINE JÁ
                         </button>

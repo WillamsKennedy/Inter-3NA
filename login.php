@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!empty($cpf) && !empty($senha)) {
 
 
-        $stmt = $pdo->prepare("SELECT idClientes, cpf, nome, senha, plano FROM clientes WHERE cpf = ?");
+        $stmt = $pdo->prepare("SELECT idClientes, idPlano, cpf, nome, senha, plano FROM clientes WHERE cpf = ?");
         $stmt->execute([$cpf]);
         $user = $stmt->fetch();
 
@@ -22,40 +22,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION = [
                 'user_id' => $user['idClientes'],
                 'username' => $user['nome'],
-                'planoatual' => $user['plano'],
+                'planoatual' => $user['idPlano'],
                 'logado' => true
             ];
-            header('Location: areaCliente.php');
+            header('Location: paginaCliente.php');
             exit;
-        }
-
-        $funcionario = verificarFuncionario($cpf);
-        if ($funcionario && $senha === $funcionario['senha']) {
-            $_SESSION = [
-                'user_id' => $funcionario['idFuncionario'],
-                'username' => $funcionario['nome'],
-                'cargo' => $funcionario['cargo'],
-                'logadoFuncionario' => true
-            ];
-            header('Location: areaFuncionario.php');
         } else {
             $_SESSION['senhainvalida'] = true;
             header('Location: loginCliente.php');
         }
     }
 }
-?>
-
-<?php
-/*         
-            elseif($_SESSION['logadoFuncionario']):
-        ?>
-        <div>
-            <a href="areaFuncioanrio.php">
-                <button class="AreaCliente">
-                    Area do funcionario
-                </button>
-            </a>
-        </div>
-    */
-?>

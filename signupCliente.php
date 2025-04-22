@@ -16,36 +16,43 @@
     session_start();
     ?>
     <div class="form-container">
-        <form class="col col-1" action="index.php">
-            <div>
+        <div class="col col-1">
+            <form action="index.php">
                 <button class="btn btn-2" type="submit" id="login">
                     Início
                 </button>
-            </div>
-            <p class="featured-words">Página de <span>Registro</span></p>
+            </form><br>
 
-        </form>
+            <form action="loginCliente.php">
+                <button type="submit" class="btn btn-2">
+                    <p class="featured-words">
+                        Página de <span>Registro</span>
+                    </p>
+                </button>
+            </form>
+
+        </div>
 
         <div class="col col-2">
-            <a href="loginCliente.php">
-                <div class="btn-box">
-                    <button class="btn btn-2" id="login">
+
+            <div class="btn-box">
+                <a href="loginCliente.php"><button class="btn btn-2" id="login">
                         Login
-                    </button>
-                </div>
-            </a>
+                    </button></a>
+            </div>
+
 
 
 
 
             <div>
-                <a href="signupCliente.php">
-                    <div class="btn-box">
-                        <button class="btn btn-1" id="register">
+
+                <div class="btn-box">
+                    <a href="signupCliente.php"><button class="btn btn-1" id="register">
                             Registro
-                        </button>
-                    </div>
-                </a>
+                        </button></a>
+                </div>
+
             </div>
 
             <!--Login form container-->
@@ -79,7 +86,7 @@
                         <i class="bx bx-lock-alt icon"></i>
                     </div>
                     <div class="input-box">
-                        <input type="text" class="input-field" placeholder="Nascimento: yyyy-mm-dd" name="nascimento" id="idnascimento" required>
+                        <input type="date" class="input-field" placeholder="Nascimento: yyyy-mm-dd" name="nascimento" id="idnascimento" required>
                         <i class="bx bx-lock-alt icon"></i>
                     </div>
                     <!--  -->

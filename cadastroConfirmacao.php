@@ -10,8 +10,8 @@ if (!isset($_SESSION['cadastro']) || !isset($_SESSION['cadastroPasso2']) || !iss
 
 $dados = array_merge($_SESSION['cadastro'], $_SESSION['cadastroPasso2'], $_SESSION['cadastroPasso3']);
 
-$query = "INSERT INTO clientes(nome, cpf, dataNascimento, senha, telefone, endereco, numero, bairro, complemento, cep, email, plano) 
-              VALUES (:nome, :cpf, :nascimento, :senha, :telefone, :endereco, :numero, :bairro, :complemento, :cep, :email, :plano)";
+$query = "INSERT INTO clientes(nome, cpf, dataNascimento, senha, telefone, endereco, numero, bairro, complemento, cep, email) 
+              VALUES (:nome, :cpf, :nascimento, :senha, :telefone, :endereco, :numero, :bairro, :complemento, :cep, :email)";
 
 $stmt = $pdo->prepare($query);
 $stmt->execute([
@@ -25,8 +25,7 @@ $stmt->execute([
     ':bairro' => $_SESSION['cadastroPasso2']['bairro'],
     ':complemento' => $_SESSION['cadastroPasso2']['complemento'],
     ':cep' => $_SESSION['cadastroPasso2']['cep'],
-    ':email' => $_SESSION['cadastroPasso3']['email'],
-    ':plano' => $_SESSION['cadastroPasso3']['plano']
+    ':email' => $_SESSION['cadastroPasso3']['email']
 ]);
 
 header('Location: loginCliente.php');

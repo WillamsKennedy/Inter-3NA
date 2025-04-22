@@ -1,9 +1,9 @@
 const loginBtn = document.querySelector("#login");
 const registerBtn = document.querySelector("#register");
 const loginForm = document.querySelector(".login-form");
-const registerForm  = document.querySelector(".register-form");
+const registerForm = document.querySelector(".register-form");
 
-loginBtn.addEventListener('click', () =>{
+loginBtn.addEventListener('click', () => {
     loginBtn.style.backgroundColor = "#21264D";
     registerBtn.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
 
@@ -16,10 +16,10 @@ loginBtn.addEventListener('click', () =>{
     document.querySelector(".col-1").style.borderRadius = " 0 20% 30% 0";
 })
 
-registerBtn.addEventListener('click', () =>{
+registerBtn.addEventListener('click', () => {
     loginBtn.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
     registerBtn.style.backgroundColor = "#21264D";
-    
+
     loginForm.style.left = "150%";
     registerForm.style.left = "50%";
 

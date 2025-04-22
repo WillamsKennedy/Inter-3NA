@@ -60,8 +60,8 @@
                     <i class="bx bx-user icon"></i>
                 </div>
 
-                <?php
-                $planosDisponiveis = [
+                <!-- <?php
+                        /*   $planosDisponiveis = [
                     "Plano Super 70MB",
                     "Plano Prime 100MB",
                     "Plano Hiper 150MB",
@@ -73,11 +73,11 @@
                         <?php
                         foreach ($planosDisponiveis as $planos) { ?>
                             <option value="<?= $planos; ?>"> <?= $planos; ?> </option>
-                            <<?php }
-                                ?>
+                            <<?php }*/
+                        ?>
 
                                 </select>
-                </div>
+                </div> -->
 
 
                 <div class="input-box">
