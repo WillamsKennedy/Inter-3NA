@@ -23,7 +23,7 @@
                 </button>
             </form><br>
 
-            <form action="loginCliente.php">
+            <form action="signupFuncionario.php">
                 <button type="submit" class="btn btn-2">
                     <p class="featured-words">
                         Página de <span>Registro</span>
