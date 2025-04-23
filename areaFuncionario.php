@@ -89,7 +89,8 @@ $stmt = $pdo->query("SELECT * FROM clientes");
 $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Buscar planos disponíveis (para o select)
-$planos = $pdo->query("SELECT * FROM planos")->fetchAll(PDO::FETCH_ASSOC);
+$planos = $pdo->query("SELECT megas,
+valor, nome as nomeP FROM planos")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -206,8 +207,8 @@ $planos = $pdo->query("SELECT * FROM planos")->fetchAll(PDO::FETCH_ASSOC);
                     <select id="plano" name="plano">
                         <option value="">Selecione um plano</option>
                         <?php foreach ($planos as $plano): ?>
-                            <option value="<?= htmlspecialchars($plano['nome']) ?>">
-                                <?= htmlspecialchars($plano['nome']) ?>
+                            <option value="<?= htmlspecialchars($plano['nomeP']) ?>">
+                                <?= htmlspecialchars($plano['nomeP']) ?>
                             </option>
                         <?php endforeach; ?>
                     </select>
@@ -250,8 +251,8 @@ $planos = $pdo->query("SELECT * FROM planos")->fetchAll(PDO::FETCH_ASSOC);
             document.getElementById('email').value = cliente.email || '';
             
             // Definir o plano selecionado
-            if (cliente.nome) {
-                document.getElementById('plano').value = cliente.nome;
+            if (cliente.plano) {
+                document.getElementById('plano').value = cliente.plano;
             } else {
                 document.getElementById('plano').value = '';
             }

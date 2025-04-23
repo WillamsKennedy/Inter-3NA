@@ -28,9 +28,9 @@ include('funcoes.php');
                 ?>
             </div>
         <?php else: ?>
-            <h1>Cadastro Concluído!</h1>
-            <div class="success-message">
-                <h3>Seu cadastro foi realizado com sucesso! Abaixo estão os dados registrados:</h3><br>
+            <h1 class="success-message">Clique em confirmar para concluir o cadastro!</h1><br>
+            <div >
+                <h3>Confirme os dados abaixo!<br></h3><br>
             </div>
 
             <div class="dados-cadastro">
@@ -49,11 +49,11 @@ include('funcoes.php');
                 <p><strong>Complemento:</strong> <?php echo htmlspecialchars($_SESSION['cadastroPasso2']['complemento']); ?></p>
                 <p><strong>CEP:</strong> <?php echo htmlspecialchars($_SESSION['cadastroPasso2']['cep']); ?></p>
                 <p><strong>Email:</strong> <?php echo htmlspecialchars($_SESSION['cadastroPasso3']['email']); ?></p>
-                
+
 
                 <div class="input-box">
                     <button type="submit" class="input-submit" name="registro" id="idregistro">
-                        Próximo
+                        Confirmar
                         <i class="bx bx-right-arrow-alt"></i>
                     </button>
                 </div>

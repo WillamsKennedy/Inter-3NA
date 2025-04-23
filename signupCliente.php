@@ -71,7 +71,7 @@
                         <div>
                             <p class="error-message">
                                 <?php
-                                echo 'CPF já cadastrado';
+                                echo 'Usuário já cadastrado';
                                 ?>
                             </p>
                         </div>
@@ -93,7 +93,7 @@
                     <?php
                     if (!isset($_SESSION['senhainvalida'])):
                     ?>
-                        <div class="error-message">
+                        <div class="message">
                             <p>A senha deve conter no mínimo 8 caracteres -</p>
                             <p>1 Letra Maiúscula - 1 letra minúscula - 1 número - 1 caractere especial</p>
                         </div>

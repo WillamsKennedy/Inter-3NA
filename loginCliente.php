@@ -68,8 +68,8 @@ session_start();
                     <?php
                     if (isset($_SESSION['senhainvalida'])):
                     ?>
-                        <div>
-                            <p class="error-message">
+                        <div class="error-message">
+                            <p >
                                 <?php
                                 echo 'CPF ou senha inválidos.';
                                 ?>

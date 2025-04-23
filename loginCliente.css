@@ -61,8 +61,24 @@ body {
     color: #21264D;
 }
 
-.error-message p {
-    color: rgb(100, 31, 146);
+.form-title .error-message {
+    color: rgb(173, 18, 18) !important; /* Isso fará com que todo o texto dentro do container seja branco */
+    text-align: center;
+     width: 100%;
+    max-width: 450px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.form-inputs .error-message{
+    color: rgb(226, 72, 72) !important; /* Isso fará com que todo o texto dentro do container seja branco */
+    text-align: center;
+     width: 100%;
+    max-width: 450px;
+    padding: 10px;
+    font-weight: bold;
 }
 
 /*==== SECOND COLUMN ====*/
